@@ -8,3 +8,6 @@ Private repository for [@guschins](https://www.linkedin.com/in/sergei-gushchin/)
 [Travel](https://rolling-scopes-school.github.io/guschins-JSFEPRESCHOOL2022Q2/travel/)
 
 [Momentum](https://rolling-scopes-school.github.io/guschins-JSFEPRESCHOOL2022Q2/momentum/dist/)
+
+[CodeJam](https://rolling-scopes-school.github.io/guschins-JSFEPRESCHOOL2022Q2/codejam/dist/)
+
