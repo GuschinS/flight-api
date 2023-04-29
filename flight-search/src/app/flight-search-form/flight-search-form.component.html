@@ -1,15 +1,15 @@
 <div class="container">
   <h2>Flight Information</h2>
-  <form action="submit">
+  <form (ngSubmit)="getFlightDestinations(from, to)">
     <!-- <label for="iata">Flight Number:</label>
     <input type="text" [(ngModel)]="iata" name="iata">
     <button (click)="getFlightInformation()">Get Information</button> -->
     <label for="from">from:</label>
-    <input type="text" [(ngModel)]="from" name="from">
+    <input type="text" [(ngModel)]="from" name="from" id="from">
     <label for="to">to:</label>
 
-    <input type="text" [(ngModel)]="to" name="to">
-    <button (click)="getFlightDestinations(from, to)">Get Information</button>
+    <input type="text" [(ngModel)]="to" name="to" id="to">
+    <button type="submit">Get Information</button>
   </form>
 
   <div class="list" *ngIf="arrayFlight">
