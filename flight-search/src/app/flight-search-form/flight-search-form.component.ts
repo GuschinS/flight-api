@@ -1,3 +1,4 @@
+import {DatePipe} from "@angular/common";
 import { Component, OnInit } from '@angular/core';
 import { FlightSearchService } from '../flight-search.service';
 import { Flight } from '../models/flight.model';
@@ -48,9 +49,15 @@ export class FlightSearchFormComponent implements OnInit {
       'Authorization',
       `Bearer ${this.token.access_token}`
     );
+    const today = new Date();
+    const departureDateNotFormat = new Date();
+    const returnDateNotFormat = new Date()
+    departureDateNotFormat.setDate(today.getDate() + 4);
+    returnDateNotFormat.setDate(today.getDate() + 8);
 
-    const departureDate = '2023-04-26';
-    const returnDate = '2023-05-05';
+    const departureDate = new DatePipe('en-US').transform(departureDateNotFormat, 'yyyy-MM-dd')
+    const returnDate = new DatePipe('en-US').transform(returnDateNotFormat, 'yyyy-MM-dd')
+
 
     const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${originLocationCode}&destinationLocationCode=${destinationLocationCode}&departureDate=${departureDate}&returnDate=${returnDate}&adults=2&max=5`;
 
