@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  margin: 50px auto;
+  flex-direction: column;
+  align-items: center;
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 300px;
+    border: 1px solid #c4c4c4;
+    padding: 10px;
+    margin: 10px;
+  }
+}

@@ -1,0 +1,100 @@
+<div class="container">
+  <h2>Flight Information</h2>
+  <form action="submit">
+    <!-- <label for="iata">Flight Number:</label>
+    <input type="text" [(ngModel)]="iata" name="iata">
+    <button (click)="getFlightInformation()">Get Information</button> -->
+    <label for="from">from:</label>
+    <input type="text" [(ngModel)]="from" name="from">
+    <label for="to">to:</label>
+
+    <input type="text" [(ngModel)]="to" name="to">
+    <button (click)="getFlightDestinations(from, to)">Get Information</button>
+  </form>
+
+  <div class="list" *ngIf="arrayFlight">
+    <div class="card" *ngFor="let flight of arrayFlight">
+      <h3>{{ flight.id }}</h3>
+      <p>{{ flight.itineraries[0].segments[0].arrival.iataCode }}</p>
+      <p>{{ flight.itineraries[0].segments[0].departure.at }}</p>
+
+      <p>{{ flight.itineraries[0].segments[0].departure.iataCode }}</p>
+      <p>{{ flight.itineraries[0].segments[0].departure.at }}</p>
+      <p>{{ flight.price.total }}<span>{{ flight.price.currency }}</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- <header>
+  <nav mat-toolbar>
+    <div class="logo">AIRWAY</div>
+    <div class="spacer"></div>
+    <div class="menu-items">
+      <a mat-button routerLink="/">Book flights</a>
+      <a mat-button>EUR</a>
+      <a mat-button routerLink="/signin">Sign in</a>
+    </div>
+  </nav>
+</header> -->
+<!-- <form class="example-form">
+  <mat-form-field appearance="fill">
+    <mat-label>Choose an option</mat-label>
+    <mat-select>
+      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-select placeholder="Round Trip">
+      <mat-option value="round">Round Trip</mat-option>
+      <mat-option value="one-way">One Way</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>From</mat-label>
+    <input matInput placeholder="Dublin DUB">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Destination</mat-label>
+    <mat-select placeholder="Choose your destination">
+      <mat-option value="aberdeen">Aberdeen (ABZ)</mat-option>
+      <mat-option value="amsterdam">Amsterdam (AMS)</mat-option>
+      <mat-option value="baku">Baku (GYD)</mat-option>
+      <mat-option value="barcelona">Barcelona (BCN)</mat-option>
+      <mat-option value="catania">Catania (CTA)</mat-option>
+      <mat-option value="dublin">Dublin (DUB)</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form> -->
+
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Dates</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="MM/DD/YYYY">
+      <input matEndDate placeholder="MM/DD/YYYY">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Passengers</mat-label>
+    <input matInput placeholder="1 Adult, 1 Child, 1...">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Search</button> -->
+
+
+
+<!-- <footer>
+  <div class="payment-methods">
+    <p>We accept these payment methods</p>
+    <img src="assets/images/payment-methods.png" alt="Accepted payment methods">
+  </div>
+  <div class="footer-text">
+    <p>© 2023, AIRWAY. All rights reserved.</p>
+  </div>
+</footer> -->
